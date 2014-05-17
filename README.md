@@ -53,4 +53,4 @@ This will show that the kernel is ready for docker to be installed from here. I 
 sudo su /
 tar xvf docker*.tar.xz
 
-.
+5. Once downloaded the docker source I made some changes to the Dockerfile.
