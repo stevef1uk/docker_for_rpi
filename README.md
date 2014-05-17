@@ -3,7 +3,7 @@ docker_for_rpi
 
 Docker for Raspberry Pi
 
-Using this repository to store useful files to get the docker programme to run on a Raspberry Pi using the Raspbian debian Wheezy distributiona
+Using this repository to store useful files to get the docker programme to run on a Raspberry Pi using the Raspbian debian Wheezy distribution.
 
 I have uploaded the linux kernel which contains LXC and AUFS.
 
