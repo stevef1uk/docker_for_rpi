@@ -25,3 +25,10 @@ Now to check that LXC is working correctly on the RPi type:
 pi@raspberrypi /opt $ lxc-checkconfig
 
 5. Once downloaded the docker source I made some changes to the Dockerfile.
+
+6. Need to edit docker/engine.go and change:
+
+checkKernelAndArch() to have the line:
+if runtime.GOARCH != "amd64" && runtime.GOARCH != "arm" {
+
+

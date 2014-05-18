@@ -46,6 +46,9 @@ RUN	apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
 	reprepro \
 	ruby1.9.1 \
 	ruby1.9.1-dev \
+	rubygems \
+	ri \
+	libruby \
 	ca-certificates \
 	s3cmd=1.1.0* \
 	--no-install-recommends
@@ -71,7 +74,7 @@ RUN	cd /usr/local/go/src && ./make.bash --no-clean 2>&1
 
 # Compile Go for cross compilation
 ENV	DOCKER_CROSSPLATFORMS	\
-	linux/386 linux/arm 
+	linux/arm 
 #	darwin/amd64 darwin/386 \
 #	freebsd/amd64 freebsd/386 freebsd/arm
 # (set an explicit GOARM of 5 for maximum compatibility)
