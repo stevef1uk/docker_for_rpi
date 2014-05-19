@@ -30,11 +30,48 @@ https://github.com/resin-io/lxc-docker-PKGBUILD/releases
 If you don't need the very latest docker than download the 0.8 release and untar it to the root partition.
 
 
-WARNING: When I tried the new docker version I got errors when attempting to run existing images and I fixed these by deleting the contents of /var/lib/docker and pulling down resin/rpi_raspbian again. This may be a bug in that the images are not compatible between docker versions. I would push any images or export them if you want to keep them safe before installing the docker tar file if you have an existing set-up.
-
 5. As root and from / tar xvf docker-0.11.1-armv6h.pkg.tar
 
 6. I have provided an example start_docker script to set the LD_LIBRARY_PATH which docker needs.
+
+I encountered the following error when trying to run an image:
+Error: Cannot start container fe60acdc3c0ef5ab84f5ce506c1358ff37af69a2a60444a8cf4231165b6cbd2a: mkdir /sys/fs/devices: no such file or directory
+
+The following link helped me fix this:
+https://github.com/ubergarm/debian-docker-runit
+
+
+Stop your old docker daeamon
+
+Remove cgroup mount point from /etc/fstab if you have it e.g.
+
+cgroup /sys/fs/cgroup cgroup defaults 0 0
+
+sudo umount /sys/fs/cgroup
+You may need to apt-get remove systemd
+You may need to reboot.
+
+Install runit and cgroupfs-mount script
+
+This will start the docker daemon up and running and it will come back after reboots.
+
+$ sudo -i
+$ apt-get install runit
+$ cd /usr/local/bin 
+$ wget https://raw.github.com/tianon/cgroupfs-mount/master/cgroupfs-mount
+$ chmod a+x cgroupfs-mount
+$ cd /etc/sv
+$ git clone https://github.com/ubergarm/debian-docker-runit
+$ ln -s /etc/sv/debian-docker-runit/docker /etc/service/docker
+
+More commands
+
+$ man sv
+$ sv status docker
+$ sv stop docker
+$ sv start docker
+
+
 
 The steps below summarise what I did to build docker from the latest source code. 
 
