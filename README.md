@@ -12,6 +12,7 @@ I have uploaded the linux kernel which contains LXC and AUFS.
 3. reboot
 
 4. Now install lxc
+<pre>
 $sudo su
 $apt 
 $mkdir /opt/lxc
@@ -20,6 +21,7 @@ $git clone https://github.com/lxc/lxc.git
 $apt-get install automake libcap-dev
 $cd lxc
 $./autogen.sh && ./configure && make && make install
+</pre>
 Now to check that LXC is working correctly on the RPi type:
 
 $lxc-checkconfig
@@ -53,7 +55,7 @@ You may need to reboot.
 Install runit and cgroupfs-mount script
 
 This will start the docker daemon up and running and it will come back after reboots.
-
+<pre>
 $sudo -i
 $apt-get install runit
 $cd /usr/local/bin 
@@ -69,6 +71,7 @@ $man sv
 $sv status docker
 $sv stop docker
 $sv start docker
+</pre>
 
 
 The steps below summarise what I did to build docker from the latest source code. 
