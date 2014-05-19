@@ -12,17 +12,17 @@ I have uploaded the linux kernel which contains LXC and AUFS.
 3. reboot
 
 4. Now install lxc
-sudo su
-apt 
-mkdir /opt/lxc
-cd /opt/lxc
-git clone https://github.com/lxc/lxc.git
-apt-get install automake libcap-dev
-cd lxc
-./autogen.sh && ./configure && make && make install
+$sudo su
+$apt 
+$mkdir /opt/lxc
+$cd /opt/lxc
+$git clone https://github.com/lxc/lxc.git
+$apt-get install automake libcap-dev
+$cd lxc
+$./autogen.sh && ./configure && make && make install
 Now to check that LXC is working correctly on the RPi type:
 
-pi@raspberrypi /opt $ lxc-checkconfig
+$lxc-checkconfig
 
 The steps below are my notes on how to build docker on a raspberry Pi to get the very latest release. The resin.io guys stopped at 0.8:
 https://github.com/resin-io/lxc-docker-PKGBUILD/releases
@@ -43,11 +43,10 @@ https://github.com/ubergarm/debian-docker-runit
 
 Stop your old docker daeamon
 
-Remove cgroup mount point from /etc/fstab if you have it e.g.
+Remove cgroup mount point from /etc/fstab if you have it e.g.  cgroup /sys/fs/cgroup cgroup defaults 0 0
 
-cgroup /sys/fs/cgroup cgroup defaults 0 0
+$sudo umount /sys/fs/cgroup
 
-sudo umount /sys/fs/cgroup
 You may need to apt-get remove systemd
 You may need to reboot.
 
@@ -55,21 +54,21 @@ Install runit and cgroupfs-mount script
 
 This will start the docker daemon up and running and it will come back after reboots.
 
-sudo -i
-apt-get install runit
-cd /usr/local/bin 
-wget https://raw.github.com/tianon/cgroupfs-mount/master/cgroupfs-mount
-chmod a+x cgroupfs-mount
-cd /etc/sv
-git clone https://github.com/ubergarm/debian-docker-runit
-ln -s /etc/sv/debian-docker-runit/docker /etc/service/docker
+$sudo -i
+$apt-get install runit
+$cd /usr/local/bin 
+$wget https://raw.github.com/tianon/cgroupfs-mount/master/cgroupfs-mount
+$chmod a+x cgroupfs-mount
+$cd /etc/sv
+$git clone https://github.com/ubergarm/debian-docker-runit
+$ln -s /etc/sv/debian-docker-runit/docker /etc/service/docker
 
 More commands
 
-man sv
-sv status docker
-sv stop docker
-sv start docker
+$man sv
+$sv status docker
+$sv stop docker
+$sv start docker
 
 
 The steps below summarise what I did to build docker from the latest source code. 
