@@ -46,6 +46,7 @@ RUN	apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
 	reprepro \
 	ruby1.9.1 \
 	ruby1.9.1-dev \
+	ruby-dev \
 	rubygems \
 	ri \
 	libruby \
