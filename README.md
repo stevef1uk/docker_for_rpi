@@ -72,7 +72,6 @@ sv stop docker
 sv start docker
 
 
-
 The steps below summarise what I did to build docker from the latest source code. 
 
 1. Once downloaded the docker source I made some changes to the Dockerfile, which I have included in the docker directory. 
