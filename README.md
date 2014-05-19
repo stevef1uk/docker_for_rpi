@@ -55,21 +55,21 @@ Install runit and cgroupfs-mount script
 
 This will start the docker daemon up and running and it will come back after reboots.
 
-$ sudo -i
-$ apt-get install runit
-$ cd /usr/local/bin 
-$ wget https://raw.github.com/tianon/cgroupfs-mount/master/cgroupfs-mount
-$ chmod a+x cgroupfs-mount
-$ cd /etc/sv
-$ git clone https://github.com/ubergarm/debian-docker-runit
-$ ln -s /etc/sv/debian-docker-runit/docker /etc/service/docker
+sudo -i
+apt-get install runit
+cd /usr/local/bin 
+wget https://raw.github.com/tianon/cgroupfs-mount/master/cgroupfs-mount
+chmod a+x cgroupfs-mount
+cd /etc/sv
+git clone https://github.com/ubergarm/debian-docker-runit
+ln -s /etc/sv/debian-docker-runit/docker /etc/service/docker
 
 More commands
 
-$ man sv
-$ sv status docker
-$ sv stop docker
-$ sv start docker
+man sv
+sv status docker
+sv stop docker
+sv start docker
 
 
 
