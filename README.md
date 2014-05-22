@@ -73,6 +73,11 @@ $sv stop docker
 $sv start docker
 </pre>
 
+I noticed that the CPU was running a little high at idle so I added the line:
+<pre>
+cgroup_disable=memory
+</pre>
+to the file /boot/config.txt to resolve this.
 
 The steps below summarise what I did to build docker from the latest source code. 
 
