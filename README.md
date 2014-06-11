@@ -5,6 +5,8 @@ Docker for Raspberry Pi
 
 Using this repository to store useful files to get the docker programme to run on a Raspberry Pi using the Raspbian debian Wheezy distribution.
 
+DISCLAIMER:  warranties, whether express or implied, including, without limitation, any implied warranties or fitness for a particular purpose are not provided. Use of anything in this repository is entirely at your own risk.
+
 I have uploaded the linux kernel which contains LXC and AUFS.
 
 1.  linux/kerrnel.img - backup your old /boot/kernel.img on your RPI and copy this one into /boot
@@ -14,7 +16,6 @@ I have uploaded the linux kernel which contains LXC and AUFS.
 4. Now install lxc
 <pre>
 $sudo su
-$apt 
 $mkdir /opt/lxc
 $cd /opt/lxc
 $git clone https://github.com/lxc/lxc.git
