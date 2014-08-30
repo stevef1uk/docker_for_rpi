@@ -33,7 +33,7 @@ https://github.com/resin-io/lxc-docker-PKGBUILD/releases
 If you don't need the very latest docker than download the 0.8 release and untar it to the root partition.
 
 
-5. As root and from / tar xvf docker-1.0.0-armv6h.pkg.tar
+5. As root and from / tar xvf docker-1.2.0-armv6h.pkg.tar
 
 6. I have provided an example start_docker script to set the LD_LIBRARY_PATH which docker needs.
 
