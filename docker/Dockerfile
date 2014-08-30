@@ -24,7 +24,7 @@
 #
 
 docker-version	0.6.1
-FROM	resin/rpi-raspbian
+FROM resin/rpi-raspbian
 MAINTAINER	Tianon Gravi <admwiggin@gmail.com> (@tianon)
 
 # Packaged dependencies
@@ -51,7 +51,7 @@ RUN	apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
 	ri \
 	libruby \
 	ca-certificates \
-	s3cmd=1.1.0* \
+	s3cmd \
 	--no-install-recommends
 
 # Get and compile LXC 0.8 (since it is the most stable)
@@ -86,7 +86,8 @@ RUN	cd /usr/local/go/src && bash -xc 'for platform in $DOCKER_CROSSPLATFORMS; do
 RUN	go get code.google.com/p/go.tools/cmd/cover
 
 # TODO replace FPM with some very minimal debhelper stuff
-RUN	gem install --no-rdoc --no-ri fpm --version 1.0.2
+#NOT NEEDED #RUN	gem install --no-rdoc --no-ri fpm 
+RUN cd /go/src/github.com/dotcloud/docker/vendor/src/github.com/docker && ln -s ../../../../../docker .
 
 # Get the "busybox" image source so we can build locally instead of pulling
 RUN	git clone http://github.com/jpetazzo/docker-busybox.git /docker-busybox
