@@ -7,7 +7,11 @@ Using this repository to store useful files to get the docker programme to run o
 
 DISCLAIMER:  warranties, whether express or implied, including, without limitation, any implied warranties or fitness for a particular purpose are not provided. Use of anything in this repository is entirely at your own risk.
 
-I have uploaded the linux kernel which contains LXC and AUFS.
+I wrote a blog which pulled together existing blogs together which explains how I produced the rasbian kernet for docker: http://stevef1uk.blogspot.co.uk/2014/06/how-to-run-docker-on-raspberry-pi.html
+
+I also wrote one on how to cross compile the linux kernel for the RPI from a Mac: http://stevef1uk.blogspot.co.uk/2014/06/here-be-dragons-how-to-cross-compile.html
+
+Feel free to do this yourself, or if you doen't have the time/patience then I have uploaded the linux kernel which contains LXC and AUFS.
 
 1.  linux/kerrnel.img - backup your old /boot/kernel.img on your RPI and copy this one into /boot
 2. modules.tar - extract this is the directory /lib/modules
