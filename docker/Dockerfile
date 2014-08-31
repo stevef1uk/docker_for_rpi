@@ -87,7 +87,8 @@ RUN	go get code.google.com/p/go.tools/cmd/cover
 
 # TODO replace FPM with some very minimal debhelper stuff
 #NOT NEEDED #RUN	gem install --no-rdoc --no-ri fpm 
-RUN cd /go/src/github.com/dotcloud/docker/vendor/src/github.com/docker && ln -s ../../../../../docker .
+# I haven't got around to getting this to work properly. For me to get this to work I manually run this on a container so that the docker compile worked
+#RUN cd /go/src/github.com/dotcloud/docker/vendor/src/github.com/docker && ln -s ../../../../../docker .
 
 # Get the "busybox" image source so we can build locally instead of pulling
 RUN	git clone http://github.com/jpetazzo/docker-busybox.git /docker-busybox
