@@ -7,7 +7,7 @@ Using this repository to store useful files to get the docker programme to run o
 
 DISCLAIMER:  warranties, whether express or implied, including, without limitation, any implied warranties or fitness for a particular purpose are not provided. Use of anything in this repository is entirely at your own risk.
 
-I wrote a blog which pulled together existing blogs together which explains how I produced the rasbian kernet for docker: http://stevef1uk.blogspot.co.uk/2014/06/how-to-run-docker-on-raspberry-pi.html
+I wrote a blog which pulled together existing blogs which explain how I produced the rasbian kernel for docker: http://stevef1uk.blogspot.co.uk/2014/06/how-to-run-docker-on-raspberry-pi.html
 
 I also wrote one on how to cross compile the linux kernel for the RPI from a Mac: http://stevef1uk.blogspot.co.uk/2014/06/here-be-dragons-how-to-cross-compile.html
 
