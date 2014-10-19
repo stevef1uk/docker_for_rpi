@@ -1,6 +1,11 @@
 docker_for_rpi
 ==============
 
+IMPORTANT NOTE: October 2014 just noticed after the last apt-get update docker has stopped working. Possibly the kernel has been updated with no AUFS support, but I haven't had time to look into this. 
+
+PLEASE DO NOT DOWNLOAD ANYTHING FROM THIS REPOSITORY AS IT NO LONGER WORKS
+
+
 Docker for Raspberry Pi
 
 Using this repository to store useful files to get the docker programme to run on a Raspberry Pi using the Raspbian debian Wheezy distribution.
