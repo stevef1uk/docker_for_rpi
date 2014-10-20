@@ -1,6 +1,8 @@
 docker_for_rpi
 ==============
 
+NOTE: Due to a recent kernel update if docker stops working after you have run apt-get update you will need to install the new kernel & modules I have updated in the repository. I raised and closed an issue on this.
+
 Docker for Raspberry Pi
 
 Using this repository to store useful files to get the docker programme to run on a Raspberry Pi using the Raspbian debian Wheezy distribution.
