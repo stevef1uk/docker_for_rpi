@@ -1,7 +1,7 @@
 docker_for_rpi
 ==============
 
-NOTE: Due to a recent kernel update if docker stops working after you have run apt-get update you will need to install the new kernel & modules I have updated in the repository. I raised and closed an issue on this.
+NOTE: Due to a recent kernel update if docker stops working after you have run apt-get update you will need to install the new kernel & modules I have updated in the repository. I raised and closed an issue on this. Please note that I can't guarantee to keep updating kernels into the future, but the blog links below explain how to do this and following them didn't take me very long this time.
 
 Docker for Raspberry Pi
 
