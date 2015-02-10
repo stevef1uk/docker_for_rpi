@@ -2,7 +2,7 @@ See: http://fabric8.io/v2/getStartedJube.html
 
 You will need to obtain the Java 8 for the arm from Oracle: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-arm-downloads-2187472.html
 
-I haven't included it due to a licensing requirements but have it in the same file as the Dockerfile. At the time I did this it was called: idk-8u33-linux-arm-vfp-hflt.tar.gz
+I haven't included it due to a licensing requirements but have it in the same directory as the Dockerfile. At the time I did this it was called: jdk-8u33-linux-arm-vfp-hflt.tar.gz
 
 1. Build the image: 
    docker build .
