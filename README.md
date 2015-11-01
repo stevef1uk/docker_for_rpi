@@ -99,4 +99,6 @@ find . -name "*.go" -print -exec grep amd64 {} \; | less
 Then:
 perl -p -i -e "s/amd64/arm/g" *.go
 
+For docker 1.9 I needed to delete the file vendor/src/github.com/opencontainers/runc/libcontainer/system/syscall_linux_64.go owing to the error 'Setgid redeclared in this block'
+
 3. In the docker directory and with docker running type sudo make
