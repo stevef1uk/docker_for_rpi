@@ -1,0 +1,14 @@
+#!/bin/sh
+echo `/bin/date`
+echo "Checking if wlan0 active..."
+export PATH=$PATH:/sbin
+ifconfig wlan0 | grep "inet addr" >>/dev/null
+
+if [ $? -eq  0 ]
+then
+  echo "Network wlan0 active"
+else
+  echo "Network wlan0 down, fixing..."
+  sudo ifdown wlan0
+  sudo ifup --force wlan0
+fi
